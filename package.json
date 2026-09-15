@@ -1,0 +1,13 @@
+{
+  "name": "harmonia",
+  "version": "1.0.0",
+  "description": "Aplicativo educacional de teoria musical: acordes, campo harmônico, partitura, braço da guitarra e interferência entre frequências.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node tools/run-tests.mjs",
+    "build": "node tools/build-standalone.mjs",
+    "serve": "node tools/serve.mjs"
+  }
+}

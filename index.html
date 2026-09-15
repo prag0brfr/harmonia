@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme-default="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Aplicativo educacional de teoria musical: acordes, campo harmônico, partitura, braço da guitarra e interferência entre frequências. Funciona no navegador, sem cadastro.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#111418">
+  <title>Harmonia — teoria musical visual</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♫</text></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <noscript>
+      <p style="padding:2rem;font-family:system-ui">
+        Este aplicativo precisa de JavaScript para funcionar. / This app needs JavaScript to run.
+      </p>
+    </noscript>
+  </div>
+  <script type="module" src="js/app.js"></script>
+  <script>
+    // Registro do service worker: só faz sentido quando servido por http(s).
+    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => { /* offline continua opcional */ });
+      });
+    }
+  </script>
+</body>
+</html>
