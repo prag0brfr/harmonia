@@ -139,6 +139,25 @@ ${chunks.join('\n\n')}
 </html>
 `;
 
+/* Versão para publicar como artefato: a plataforma já fornece o esqueleto
+   do documento, então entram só o título, o estilo e o conteúdo. */
+const artifact = `<title>Harmonia</title>
+<style>
+${css}
+</style>
+<div id="app">
+  <noscript><p style="padding:2rem;font-family:system-ui">Este aplicativo precisa de JavaScript. / This app needs JavaScript.</p></noscript>
+</div>
+<script>
+(function () {
+'use strict';
+${chunks.join('\n\n')}
+})();
+</script>
+`;
+
 await mkdir(join(rootDir, 'dist'), { recursive: true });
 await writeFile(join(rootDir, 'dist', 'harmonia.html'), html, 'utf8');
+await writeFile(join(rootDir, 'dist', 'artifact.html'), artifact, 'utf8');
 console.log(`dist/harmonia.html gerado (${(html.length / 1024).toFixed(0)} KB).`);
+console.log(`dist/artifact.html gerado (${(artifact.length / 1024).toFixed(0)} KB).`);

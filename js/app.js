@@ -100,6 +100,20 @@ function renderNav() {
     text: t(tab.key),
     onclick: () => navigate(tab.id)
   })));
+  centerActiveTab();
+}
+
+/**
+ * No celular a lista de abas vira uma barra rolável fixa no rodapé; a aba
+ * ativa pode ficar fora da vista. Centraliza-a dentro da própria barra
+ * (sem mexer na rolagem da página).
+ */
+function centerActiveTab() {
+  const active = nav && nav.querySelector('.tab.active');
+  if (!active || nav.scrollWidth <= nav.clientWidth + 1) return;
+  const left = active.offsetLeft - (nav.clientWidth - active.offsetWidth) / 2;
+  const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  nav.scrollTo({ left: Math.max(0, left), behavior: smooth ? 'smooth' : 'auto' });
 }
 
 function openGuide() {

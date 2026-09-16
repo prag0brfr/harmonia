@@ -297,7 +297,7 @@ h5.sub-title { margin-top: .9rem; }
 .tool-icon { font-size: 1.6rem; }
 .tool-card .btn { align-self: flex-start; margin-top: .4rem; }
 
-.study-path { margin: 0; padding-left: 1.2rem; }
+.study-path { margin: 0; padding-left: 0; list-style: none; }  /* os títulos já vêm numerados */
 .study-path li { margin-bottom: .7rem; }
 .study-path h4 { font-size: .98rem; }
 .study-path p { color: var(--text-muted); font-size: .9rem; margin: 0; }
@@ -662,3 +662,214 @@ kbd {
 .freq-sides-stack .sub-title { margin: .2rem 0 .1rem; }
 .wave-canvas { height: 236px; }
 .beat-canvas { height: 90px; }
+
+/* =========================================================================
+   Celular e toque — reorganização para telas estreitas
+   -------------------------------------------------------------------------
+   No celular as abas saem do cabeçalho e viram uma barra fixa no rodapé,
+   ao alcance do polegar. Os cartões deixam de ter rolagem interna (a página
+   inteira rola), os campos ocupam a linha toda e todo alvo de toque passa
+   a ter pelo menos ~44px. Nada aqui afeta o desktop.
+   ========================================================================= */
+
+@media (max-width: 760px) {
+
+  /* ---- Cabeçalho enxuto: marca + ações ---- */
+  /* Sem backdrop-filter aqui: ele criaria um bloco contentor e prenderia
+     a barra de abas (position: fixed) dentro do cabeçalho. */
+  .app-header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--bg-elev);
+  }
+  .bar {
+    padding: .3rem .7rem;
+    gap: .5rem;
+    min-height: 48px;
+  }
+  .brand { margin-right: auto; }
+  .brand-name { display: block; font-size: 1rem; }
+  .header-actions { gap: .35rem; }
+  .header-actions .btn {
+    min-height: 40px; min-width: 40px;
+    padding: .4rem .7rem; font-size: .9rem;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+
+  /* Telas muito estreitas: o nome cede lugar aos botões. */
+  @media (max-width: 359px) {
+    .brand-name { display: none; }
+    .header-actions .btn { padding: .4rem .55rem; }
+  }
+
+  /* ---- Abas na base da tela ---- */
+  .tabs {
+    position: fixed; z-index: 30;
+    left: 0; right: 0; bottom: 0;
+    margin: 0;
+    padding: .4rem .6rem calc(.4rem + env(safe-area-inset-bottom, 0px));
+    gap: .35rem;
+    background: color-mix(in srgb, var(--bg-elev) 94%, transparent);
+    backdrop-filter: blur(14px);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -2px 12px rgba(16, 24, 40, .06);
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    /* Sem máscara aqui: com backdrop-filter ela deixaria a borda furada. */
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs { scrollbar-width: none; }
+
+  .tab {
+    font-size: .88rem; font-weight: 600;
+    padding: .5rem .9rem; min-height: 40px;
+    display: inline-flex; align-items: center;
+    background: var(--bg-sunken); color: var(--text-muted);
+    border-color: var(--border);
+    scroll-snap-align: center;
+  }
+  .tab.active {
+    background: var(--accent); color: var(--accent-text);
+    border-color: var(--accent);
+  }
+
+  /* ---- Página: respiro maior e espaço para a barra de baixo ---- */
+  .page {
+    padding-block: .7rem;
+    padding-inline: .75rem;
+    padding-bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+  }
+  .dash { gap: .7rem; }
+  .panel { padding: .85rem .8rem; }
+  .panel-title { font-size: .78rem; margin-bottom: .55rem; }
+  .section-head-wrap { margin-bottom: .55rem; }
+  .section-title { font-size: 1.15rem; }
+  .sub-title { margin: .9rem 0 .45rem; }
+
+  /* ---- Sem caixas de rolagem dentro da página ---- */
+  .card-body.scroll,
+  .card-body.scroll-sm,
+  .card-body.scroll-md,
+  .card-body.scroll-lg {
+    max-height: none; overflow: visible; padding-right: 0;
+  }
+
+  /* ---- Campos: dois por linha quando couber, fonte 16px (evita o zoom do iOS).
+         Empilham sozinhos abaixo de ~330px de largura útil. ---- */
+  .controls-grid { grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: .5rem .45rem; }
+  .controls-inline { gap: .5rem .45rem; }
+  .controls-inline .field { flex: 1 1 148px; min-width: 148px; }
+  .field-label { font-size: .78rem; }
+  .control {
+    font-size: 16px; padding: .55rem .6rem; min-height: 44px;
+    text-overflow: ellipsis;
+  }
+  textarea.control { min-height: 5.5rem; }
+  .slider { height: 28px; }
+  .slider-field { min-width: 0; }
+
+  /* ---- Alvos de toque ---- */
+  .btn { min-height: 42px; padding: .55rem 1rem; font-size: .92rem; }
+  .btn-small { min-height: 36px; padding: .35rem .75rem; font-size: .85rem; }
+  .play-bar { gap: .4rem; margin: .6rem 0 .4rem; }
+  .play-bar .btn { flex: 1 1 auto; justify-content: center; }
+
+  .chip {
+    min-height: 38px; padding: .45rem .8rem; font-size: .88rem;
+    display: inline-flex; align-items: center;
+  }
+  .chip-row, .degree-add { gap: .4rem; }
+
+  /* Um seletor segmentado tem rótulos longos: ocupa a linha inteira e
+     divide o espaço igualmente, quebrando o texto dentro do botão. */
+  .controls-grid > .field:has(.segmented) { grid-column: 1 / -1; }
+  .controls-inline > .field:has(.segmented) { flex: 1 1 100%; min-width: 0; }
+  .segmented { display: flex; width: 100%; flex-wrap: nowrap; align-items: stretch; }
+  .seg {
+    flex: 1 1 0; min-width: 0; min-height: 40px;
+    padding: .4rem .5rem; font-size: .85rem; line-height: 1.2;
+    text-align: center; white-space: normal;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .note-btn { min-height: 42px; min-width: 50px; font-size: .92rem; }
+  .note-row { gap: .3rem; }
+  .note-row-label { min-width: 100%; margin-bottom: -.1rem; }
+
+  .mini { min-height: 32px; min-width: 32px; font-size: .78rem; padding: .3rem .4rem; }
+  .prog-actions { gap: .25rem; margin-top: .3rem; }
+  .prog-chip { min-width: 92px; padding: .45rem .5rem; }
+
+  .option { min-height: 46px; display: flex; align-items: center; font-size: .92rem; }
+  .option-grid { gap: .45rem; }
+  .toggle { min-height: 40px; }
+
+  .saved-list li { flex-wrap: wrap; row-gap: .25rem; }
+  .saved-name { flex: 1 1 100%; white-space: normal; }
+
+  /* ---- Pares rótulo/valor empilhados ---- */
+  .kv {
+    flex-direction: column; gap: 0;
+    padding: .3rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  }
+  .kv:last-child { border-bottom: 0; }
+  .panel code { overflow-wrap: anywhere; }
+  /* Rótulo em cima, valor embaixo: evita sobras de uma sílaba na linha seguinte. */
+  .scale-info .label, .chord-formula .label { display: block; }
+  .kv-label { min-width: 0; }
+  .kv-value { font-size: .95rem; }
+
+  /* ---- Visualizações: largura total da tela e altura menor ---- */
+  .viz-scroll {
+    margin-inline: -.8rem;
+    padding-inline: .8rem;
+    overscroll-behavior-x: contain;
+  }
+  .fretboard-svg { min-width: 640px; }
+  .keyboard-svg { min-width: 360px; }
+  .wave-canvas { height: 180px; }
+  .beat-canvas { height: 84px; }
+  .table-wrap { margin-inline: -.8rem; padding-inline: .8rem; }
+
+  /* ---- Grades mais folgadas ---- */
+  .degree-grid { grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); gap: .45rem; }
+  .degree-card { padding: .6rem .55rem; }
+  .degree-notes { font-size: .74rem; }
+  .readout-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: .5rem; }
+  .freq-sides { gap: .7rem; }
+  .card-grid, .prog-list, .results-grid, .guide-tools { grid-template-columns: 1fr; }
+
+  /* ---- Diálogo "Como usar" ---- */
+  .modal { width: calc(100% - 1rem); max-height: 90vh; }
+  .modal-body { max-height: 74vh; padding: .85rem; }
+  .guide-tool { flex-wrap: wrap; }
+  .guide-tool .btn { align-self: flex-start; }
+
+  /* ---- Tipografia de destaque ---- */
+  .chord-symbol { font-size: 2.1rem; }
+  .big-answer-value { font-size: 1.25rem; }
+  .result-symbol { font-size: 1.4rem; min-width: 0; }
+  .result-score { min-width: 100%; }
+}
+
+/* Tablet em pé: duas colunas de cartões continuam, mas com toque confortável. */
+@media (min-width: 761px) and (max-width: 1024px) and (pointer: coarse) {
+  .control { font-size: 16px; min-height: 42px; }
+  .btn { min-height: 40px; }
+  .chip { min-height: 36px; padding: .4rem .75rem; }
+  .note-btn { min-height: 38px; min-width: 46px; }
+  .card-body.scroll-sm { max-height: none; }
+}
+
+/* Paisagem no celular: a barra de baixo ocupa menos e os gráficos encolhem.
+   Só vale enquanto as abas estão fixas no rodapé (até 760px de largura). */
+@media (max-width: 760px) and (orientation: landscape) {
+  .tabs { padding-block: .3rem; }
+  .tab { min-height: 34px; padding: .35rem .75rem; }
+  .page { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+  .wave-canvas { height: 150px; }
+}
