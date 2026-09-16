@@ -1,106 +1,114 @@
-# Harmonia — teoria musical visual e interativa
+# Harmonia — visual, interactive music theory
 
-Aplicativo web estático para estudar teoria musical tendo o violão como ponto
-de partida. Roda inteiramente no navegador: **sem backend, sem cadastro, sem
-envio de dados** e sem dependências de terceiros — apenas HTML, CSS,
-JavaScript puro, SVG, Canvas e a Web Audio API.
+**EN —** A static web app for studying music theory with the guitar as the
+starting point. It runs entirely in the browser: **no backend, no sign-up, no
+data leaving your machine** and no third-party dependencies — just HTML, CSS,
+plain JavaScript, SVG, Canvas and the Web Audio API. The interface is bilingual
+(English / Portuguese), and note names can be switched independently between
+international notation (C D E) and Latin solfège (Dó Ré Mi).
 
-Interface bilíngue (português / inglês), com escolha independente entre os
-nomes de nota em solfejo latino (Dó Ré Mi) e notação internacional (C D E).
-
----
-
-## 1. Objetivo
-
-Ajudar iniciantes e estudantes a:
-
-- entender notas, intervalos, escalas e acordes;
-- visualizar as relações entre frequências e ouvir por que certos intervalos
-  soam "lisos" e outros "ásperos";
-- identificar acordes a partir de um conjunto de notas, com as ambiguidades
-  explicitadas em vez de escondidas;
-- compreender campos harmônicos e funções harmônicas;
-- ver as mesmas notas em três representações (partitura, braço da guitarra e
-  teclado de piano), para perceber que são apenas mapas diferentes do mesmo som.
-
-A ênfase é **didática e honesta**: quando a análise automática é ambígua ou
-aproximada, o aplicativo diz isso.
+**PT —** Aplicativo web estático para estudar teoria musical tendo o violão
+como ponto de partida. Roda inteiramente no navegador: **sem backend, sem
+cadastro, sem envio de dados** e sem dependências de terceiros — apenas HTML,
+CSS, JavaScript puro, SVG, Canvas e a Web Audio API. A interface é bilíngue
+(inglês / português), com escolha independente entre a notação internacional
+(C D E) e o solfejo latino (Dó Ré Mi). O restante deste documento está em
+inglês; para usar o aplicativo em português, basta trocar o idioma no botão ⚙.
 
 ---
 
-## 2. Funcionalidades
+## 1. Purpose
 
-Nove ferramentas, cada uma numa tela própria montada em colunas para caber
-inteira numa tela de computador sem rolagem.
+Help beginners and students to:
 
-| Ferramenta | O que faz |
+- understand notes, intervals, scales and chords;
+- visualise the relationships between frequencies, and hear why some intervals
+  sound "smooth" and others "rough";
+- identify chords from a set of notes, with the ambiguities made explicit
+  rather than hidden;
+- make sense of harmonic fields and harmonic function;
+- see the same notes in three representations (staff, guitar fretboard and
+  piano keyboard), so it becomes clear they are just different maps of the
+  same sound.
+
+The emphasis is **didactic and honest**: when the automatic analysis is
+ambiguous or approximate, the app says so.
+
+---
+
+## 2. Features
+
+Nine tools, each on its own screen, laid out in columns so that a desktop
+screen shows the whole thing without scrolling.
+
+| Tool | What it does |
 |---|---|
-| **Biblioteca de acordes** | 35 tipos de acorde, de tríades a alterados; notas, fórmula, intervalos e frequências; inversões; partitura, braço, teclado e digitações sugeridas; reprodução em bloco, arpejo ou nota a nota; troca de grafia enarmônica |
-| **Construtor e identificador** | Seleção de notas no teclado virtual ou por botões; identificação com pontuação de correspondência, inversão detectada pelo baixo, explicação do raciocínio e aviso de ambiguidade |
-| **Explorador de escalas** | 18 escalas e modos; fórmula, graus, padrão de passos e aplicação; acordes do campo harmônico (ou os que cabem na escala, quando ela não gera sete graus); reprodução subindo, descendo e em terças; braço e teclado |
-| **Calculadora de intervalos** | Nome, abreviação, semitons, classificação simples/composta, inversão, frequências, razão simplificada e desvio em cents da afinação justa; reprodução ascendente, descendente e simultânea; partitura, braço e teclado |
-| **Campo harmônico** | Dez escalas de sete graus; tríades ou tétrades; grau, qualidade, fórmula e função harmônica; acordes que precedem e sucedem; substitutos; dominante secundário; onze progressões-modelo tocáveis em laço |
-| **Montador de progressões** | Sequência montada a partir dos graus (mais dominantes secundários), com reordenação e remoção; execução em bloco, arpejada ou com baixo; andamento e tempos por acorde; laço; sugestões de continuação; modelos prontos; salvamento no navegador |
-| **Transposição** | Notas, cifras e progressões inteiras, por semitons ou de tonalidade a tonalidade, preservando a grafia; original e resultado lado a lado, ambos tocáveis; escala transposta com partitura |
-| **Treinamento auditivo** | Nove tipos de exercício (notas, intervalos, qualidade do acorde, sétimas, escalas, graus, consonância, progressões e tonalidade) em três níveis, com áudio, múltiplas tentativas, resposta comentada, pontuação e evolução guardadas localmente |
-| **Interferência entre frequências** | Duas notas ou frequências manuais; formas de onda, soma e envoltória em Canvas com zoom, janela temporal e resolução ajustáveis; frequência de batimento, razão simplificada, intervalo temperado mais próximo em cents, estimativa de consonância (Plomp–Levelt/Sethares), série harmônica e um guia rápido de conceitos |
-| **Áudio** | Osciladores senoidal, triangular, quadrado e dente de serra, com envoltória ADSR, volume, andamento, referência do Lá4 ajustável (392–466 Hz) e parada imediata |
-| **Ajustes** (botão ⚙) | Idioma, notação das notas, tema claro/escuro/automático, afinação do violão, som e limpeza dos dados locais |
+| **Chord library** | 36 chord types, from triads to altered chords; notes, formula, intervals and frequencies; inversions; staff, fretboard, keyboard and suggested fingerings; playback as a block, arpeggiated or note by note; enharmonic respelling |
+| **Chord builder & finder** | Pick notes on the virtual keyboard or with buttons; identification with a match score, inversion detected from the bass, an explanation of the reasoning and an ambiguity warning |
+| **Scale & mode explorer** | 18 scales and modes; formula, degrees, step pattern and typical use; chords of the harmonic field (or the chords that fit inside the scale, when it does not produce seven degrees); playback ascending, descending and in thirds; fretboard and keyboard |
+| **Interval calculator** | Name, abbreviation, semitones, simple/compound classification, inversion, frequencies, simplified ratio and deviation in cents from just intonation; ascending, descending and simultaneous playback; staff, fretboard and keyboard |
+| **Harmonic field** | Ten seven-degree scales; triads or seventh chords; degree, quality, formula and harmonic function; chords that typically precede and follow; substitutes; secondary dominants; eleven model progressions playable on a loop |
+| **Progression builder** | A sequence assembled from the degrees (plus secondary dominants), with reordering and removal; block, arpeggiated or bass-then-chord playback; tempo and beats per chord; loop; suggested continuations; ready-made templates; saved in the browser |
+| **Transposition** | Notes, chord symbols and whole progressions, by semitones or from key to key, preserving spelling; original and result side by side, both playable; the transposed scale with staff notation |
+| **Ear training** | Nine exercise types (notes, intervals, chord quality, sevenths, scales, degrees, consonance, progressions and key) across three levels, with audio, multiple attempts, a commented answer, and scores and progress kept locally |
+| **Frequency interference** | Two notes or manual frequencies; waveforms, sum and envelope drawn on Canvas with adjustable zoom, time window and resolution; beat frequency, simplified ratio, nearest tempered interval in cents, a consonance estimate (Plomp–Levelt/Sethares), the harmonic series and a quick concept guide |
+| **Audio** | Sine, triangle, square and sawtooth oscillators with an ADSR envelope, volume, tempo, adjustable A4 reference (392–466 Hz) and an immediate stop |
+| **Settings** (⚙ button) | Language, note notation, light/dark/automatic theme, guitar tuning, sound, and clearing local data |
 
-O botão **? Como usar** abre um diálogo com o objetivo do aplicativo, o caminho
-de estudo sugerido, a lista de ferramentas e os atalhos de teclado.
-
----
-
-## 3. Tecnologias
-
-- HTML5, CSS3 (variáveis, grid, flex, `color-mix`), JavaScript ES2022 (módulos ES)
-- SVG para partitura, braço e teclado
-- Canvas 2D para os gráficos de onda
-- Web Audio API para o som
-- `localStorage` para preferências
-- Service worker simples para funcionamento offline
-
-**Nenhuma biblioteca de terceiros é usada, nem em produção nem nos testes.**
-Não há etapa de compilação obrigatória: os arquivos são servidos como estão.
-As claves de sol e de fá da partitura são desenhadas com curvas de Bézier
-próprias, justamente para não depender de fontes musicais como a Bravura.
+The **? How to use** button opens a dialog with the app's purpose, a suggested
+study path, the list of tools and the keyboard shortcuts.
 
 ---
 
-## 4. Estrutura de pastas
+## 3. Technology
+
+- HTML5, CSS3 (custom properties, grid, flex, `color-mix`), JavaScript ES2022 (ES modules)
+- SVG for the staff, fretboard and keyboard
+- Canvas 2D for the waveform graphs
+- Web Audio API for sound
+- `localStorage` for preferences
+- A small service worker for offline use
+
+**No third-party library is used, in production or in the tests.** There is no
+mandatory build step: the files are served as they are. The treble and bass
+clefs are drawn with hand-written Bézier curves precisely so that no music font
+such as Bravura is needed.
+
+---
+
+## 4. Folder structure
 
 ```
 .
-├── index.html                  Casca da aplicação
-├── manifest.webmanifest        Metadados do PWA
-├── icon.svg                    Ícone
-├── sw.js                       Service worker (cache offline)
+├── index.html                  App shell
+├── manifest.webmanifest        PWA metadata
+├── icon.svg                    Icon
+├── sw.js                       Service worker (offline cache)
 ├── css/
-│   └── styles.css              Folha de estilos única, com tema claro/escuro
+│   └── styles.css              Single stylesheet, light/dark theme, mobile layout
 ├── js/
-│   ├── app.js                  Abas, navegação por hash, atalhos de teclado
-│   ├── i18n.js                 Dicionário PT/EN
-│   ├── state.js                Preferências em memória + barramento de eventos
-│   ├── storage.js              localStorage protegido contra bloqueio
-│   ├── core/                   Teoria musical pura (sem DOM, testável no Node)
-│   │   ├── notes.js            Notas, MIDI, frequências, enarmonia, afinação justa
-│   │   ├── intervals.js        Número, qualidade, inversão, transposição
-│   │   ├── chords.js           Catálogo, construção e identificação de acordes
-│   │   ├── scales.js           Escalas e modos
-│   │   ├── harmony.js          Campos harmônicos, funções e progressões
-│   │   ├── transpose.js        Cifras, progressões e mudança de tonalidade
-│   │   └── training.js         Gerador de exercícios auditivos
+│   ├── app.js                  Tabs, hash navigation, keyboard shortcuts
+│   ├── i18n.js                 EN/PT dictionary
+│   ├── state.js                In-memory preferences + event bus
+│   ├── storage.js              localStorage, guarded against being blocked
+│   ├── core/                   Pure music theory (no DOM, testable in Node)
+│   │   ├── notes.js            Notes, MIDI, frequencies, enharmonics, just intonation
+│   │   ├── intervals.js        Number, quality, inversion, transposition
+│   │   ├── chords.js           Chord catalogue, construction and identification
+│   │   ├── scales.js           Scales and modes
+│   │   ├── harmony.js          Harmonic fields, functions and progressions
+│   │   ├── transpose.js        Chord symbols, progressions and key changes
+│   │   └── training.js         Ear-training exercise generator
 │   ├── audio/
-│   │   └── audio.js            Web Audio API: notas, acordes, progressões
-│   ├── view/                   Desenho (SVG/Canvas), sem regra musical
-│   │   ├── staff.js            Partitura
-│   │   ├── fretboard.js        Braço, afinações e gerador de digitações
-│   │   ├── keyboard.js         Teclado de piano
-│   │   └── interference.js     Batimento, razões, consonância e gráficos
-│   └── ui/                     Telas
-│       ├── ui.js               Componentes básicos (h, select, cartões, grade)
-│       ├── home.js             Diálogo "Como usar"
+│   │   └── audio.js            Web Audio API: notes, chords, progressions
+│   ├── view/                   Drawing (SVG/Canvas), no music rules
+│   │   ├── staff.js            Staff notation
+│   │   ├── fretboard.js        Fretboard, tunings and fingering generator
+│   │   ├── keyboard.js         Piano keyboard
+│   │   └── interference.js     Beats, ratios, consonance and graphs
+│   └── ui/                     Screens
+│       ├── ui.js               Basic components (h, select, cards, grid)
+│       ├── home.js             "How to use" dialog
 │       ├── chordLibrary.js
 │       ├── chordFinder.js
 │       ├── scales.js
@@ -112,142 +120,147 @@ próprias, justamente para não depender de fontes musicais como a Bravura.
 │       ├── interferenceView.js
 │       └── settings.js
 ├── tests/
-│   ├── harness.mjs             Micro-arcabouço de testes
-│   └── core.test.mjs           146 testes com entrada e saída esperadas
+│   ├── harness.mjs             Micro test harness
+│   └── core.test.mjs           146 tests with explicit input and expected output
 ├── tools/
-│   ├── run-tests.mjs           Executor dos testes
-│   ├── serve.mjs               Servidor estático de desenvolvimento
-│   └── build-standalone.mjs    Empacotador para arquivo único
-└── dist/
-    └── harmonia.html           Versão de arquivo único (gerada)
+│   ├── run-tests.mjs           Test runner
+│   ├── serve.mjs               Static development server
+│   └── build-standalone.mjs    Single-file bundler
+└── dist/                       Generated
+    ├── harmonia.html           Single-file version (opens with a double-click)
+    └── artifact.html           Same app without the document shell, for embedding
 ```
 
-A separação é deliberada: **`core/` não conhece o DOM**, **`view/` não conhece
-regra musical** e **`ui/` só costura os dois**. É isso que permite testar a
-teoria no Node e trocar qualquer visualização sem tocar na música.
+The separation is deliberate: **`core/` knows nothing about the DOM**,
+**`view/` knows nothing about music theory** and **`ui/` only stitches the two
+together**. That is what makes it possible to test the theory in Node and to
+replace any visualisation without touching the music.
 
 ---
 
-## 5. Como executar
+## 5. Running it
 
-### 5.1 Com um servidor local (recomendado)
+### 5.1 With a local server (recommended)
 
-Módulos ES não carregam pelo protocolo `file://` por causa da política de
-mesma origem, então o `index.html` precisa ser servido por HTTP:
+ES modules do not load over the `file://` protocol because of the same-origin
+policy, so `index.html` has to be served over HTTP:
 
 ```bash
-# Node (incluído no projeto, sem dependências)
+# Node (included in the project, no dependencies)
 node tools/serve.mjs          # http://localhost:8080
-node tools/serve.mjs 3000     # outra porta
+node tools/serve.mjs 3000     # another port
 
-# ou Python
+# or Python
 python3 -m http.server 8080
 
-# ou, se preferir
+# or, if you prefer
 npx serve .
 ```
 
-Depois abra `http://localhost:8080`.
+Then open `http://localhost:8080`.
 
-### 5.2 Sem servidor nenhum (duplo clique)
+### 5.2 With no server at all (double-click)
 
-Gere a versão de arquivo único:
+Build the single-file version:
 
 ```bash
-node tools/build-standalone.mjs
+node tools/build-standalone.mjs     # or: npm run build
 ```
 
-Isso cria `dist/harmonia.html` (~200 KB) com todo o CSS e JavaScript embutidos.
-Esse arquivo abre com duplo clique, funciona offline e pode ser enviado por
-e-mail ou copiado para um pendrive. O service worker não é usado nesse modo
-(ele exige http/https), mas também não faz falta: já está tudo no arquivo.
+This writes `dist/harmonia.html` (~300 KB) with all the CSS and JavaScript
+inlined. That file opens with a double-click, works offline and can be emailed
+or copied onto a USB stick. The service worker is not used in this mode (it
+requires http/https), and it is not needed either — everything is already in
+the file. The same command also writes `dist/artifact.html`, which is the same
+app without the `<!DOCTYPE>`/`<html>`/`<head>`/`<body>` wrapper, for hosts that
+supply their own document shell.
 
 ---
 
-## 6. Como publicar de graça
+## 6. Publishing it for free
 
-O projeto é 100 % estático: basta subir a pasta inteira.
+The project is 100 % static: just upload the whole folder.
 
 ### GitHub Pages
 
 ```bash
 git init
 git add .
-git commit -m "Harmonia: aplicativo de teoria musical"
+git commit -m "Harmonia: music theory app"
 git branch -M main
-git remote add origin https://github.com/SEU-USUARIO/harmonia.git
+git remote add origin https://github.com/YOUR-USERNAME/harmonia.git
 git push -u origin main
 ```
 
-No repositório: **Settings → Pages → Build and deployment → Source: Deploy from
-a branch**, escolha `main` e a pasta `/ (root)` e salve. Em um ou dois minutos
-o app estará em `https://SEU-USUARIO.github.io/harmonia/`.
+In the repository: **Settings → Pages → Build and deployment → Source: Deploy
+from a branch**, pick `main` and the `/ (root)` folder, and save. Within a
+minute or two the app will be live at
+`https://YOUR-USERNAME.github.io/harmonia/`.
 
-Como todos os caminhos do projeto são relativos (`css/styles.css`, `./js/...`),
-ele funciona tanto na raiz do domínio quanto em um subdiretório de projeto.
+Because every path in the project is relative (`css/styles.css`, `./js/...`),
+it works both at the root of a domain and in a project subdirectory.
 
 ### Netlify
 
-- **Pelo site:** arraste a pasta do projeto para <https://app.netlify.com/drop>.
-- **Pelo Git:** conecte o repositório; em *Build command* deixe vazio e em
-  *Publish directory* use `.`.
-- **Pelo terminal:** `npx netlify-cli deploy --dir=. --prod`
+- **From the site:** drag the project folder onto <https://app.netlify.com/drop>.
+- **From Git:** connect the repository; leave *Build command* empty and set
+  *Publish directory* to `.`.
+- **From the terminal:** `npx netlify-cli deploy --dir=. --prod`
 
 ### Cloudflare Pages
 
-No painel: **Workers & Pages → Create → Pages → Connect to Git**. Em
-*Framework preset* escolha **None**, deixe o *Build command* vazio e use `/`
-como *Build output directory*.
+In the dashboard: **Workers & Pages → Create → Pages → Connect to Git**. Set
+*Framework preset* to **None**, leave *Build command* empty and use `/` as the
+*Build output directory*.
 
-Qualquer outra hospedagem estática (Vercel, Surge, Firebase Hosting, um
-diretório no Apache) funciona do mesmo jeito. Só garanta que o servidor envie
-os `.js` com `Content-Type: text/javascript`, senão os módulos não carregam.
+Any other static host (Vercel, Surge, Firebase Hosting, a directory on Apache)
+works the same way. Just make sure the server sends `.js` files with
+`Content-Type: text/javascript`, otherwise the modules will not load.
 
 ---
 
-## 7. Testes
+## 7. Tests
 
 ```bash
-node tools/run-tests.mjs     # ou: npm test
+node tools/run-tests.mjs     # or: npm test
 ```
 
-São 146 testes sobre o núcleo teórico, escritos com entrada e saída explícitas.
-Exemplos do que é verificado:
+There are 146 tests covering the theory core, written with explicit inputs and
+expected outputs. A sample of what is checked:
 
-| Entrada | Saída esperada |
+| Input | Expected output |
 |---|---|
 | `toMidi(parseNote('C4'))` | `60` |
 | `midiToFreq(69)` | `440` Hz |
-| `freq(parseNote('C4'))` | `261,6256` Hz |
-| `intervalBetween(C4, D#4)` | 2ª aumentada (3 semitons) — e **não** 3ª menor |
-| `buildChord(C4, 'dim7')` | `Dó Mi♭ Sol♭ Si♭♭` (sétima diminuta, não sexta maior) |
-| `buildScale(F3, 'major')` | `Fá Sol Lá Si♭ Dó Ré Mi` (com Si♭, nunca Lá♯) |
-| `identifyChords([E4, G4, C5])` | `C` maior, 1ª inversão |
-| `identifyChords([D4, F4, A4, C5])` | `Dm7` **e** `F6` — ambiguidade sinalizada |
+| `freq(parseNote('C4'))` | `261.6256` Hz |
+| `intervalBetween(C4, D#4)` | augmented 2nd (3 semitones) — and **not** a minor 3rd |
+| `buildChord(C4, 'dim7')` | `C E♭ G♭ B♭♭` (a diminished seventh, not a major sixth) |
+| `buildScale(F3, 'major')` | `F G A B♭ C D E` (with B♭, never A♯) |
+| `identifyChords([E4, G4, C5])` | `C` major, 1st inversion |
+| `identifyChords([D4, F4, A4, C5])` | `Dm7` **and** `F6` — ambiguity flagged |
 | `harmonicField(C4, 'major')` | `I ii iii IV V vi vii°` |
-| `openStringMidis(padrão)` | `[40, 45, 50, 55, 59, 64]` |
-| `fretMidi(padrão, corda 1, casa 12)` | `76` (Mi5) |
+| `openStringMidis(standard)` | `[40, 45, 50, 55, 59, 64]` |
+| `fretMidi(standard, string 1, fret 12)` | `76` (E5) |
 | `beatFrequency(440, 443)` | `3` Hz |
 | `ratioApprox(440, 660)` | `3 : 2` |
-| `consonanceScore(quinta)` | maior que a do trítono |
-| `intervalForKeyChange(C, F#)` | 4ª aumentada — e **não** 5ª diminuta |
+| `consonanceScore(fifth)` | higher than the tritone's |
+| `intervalForKeyChange(C, F#)` | augmented 4th — and **not** a diminished 5th |
 | `transposeLine('C \| Am7 F G7/B', C→E♭)` | `E♭ \| Cm7 A♭ B♭7/D` |
-| `transposeChordToken('Cmaj7(#11)', C→D)` | `Dmaj7(#11)` — sufixo fora do catálogo é preservado |
-| `makeQuestion(exercício, nível)` | resposta sempre presente entre as alternativas, alturas audíveis, explicação nos dois idiomas |
+| `transposeChordToken('Cmaj7(#11)', C→D)` | `Dmaj7(#11)` — a suffix outside the catalogue is preserved |
+| `makeQuestion(exercise, level)` | the answer is always among the options, the pitches are audible, the explanation exists in both languages |
 
-O comportamento em diferentes tamanhos de tela e a reprodução de áudio foram
-verificados manualmente em navegador (Chromium), incluindo 390 px de largura
-sem rolagem horizontal, tema escuro e navegação por teclado. Esses dois pontos
-dependem de APIs do navegador e não são cobertos pelos testes em Node — veja as
-limitações.
+Behaviour across screen sizes and audio playback were verified by hand in a
+browser (Chromium): 360 px, 390 px and 1440 px wide with no horizontal
+scrolling, dark theme, and keyboard navigation. Those two areas depend on
+browser APIs and are not covered by the Node tests — see the limitations.
 
 ---
 
-## 8. Como estender
+## 8. Extending it
 
-### Adicionar um tipo de acorde
+### Adding a chord type
 
-Em `js/core/chords.js`, acrescente uma entrada em `CHORD_TYPES`:
+In `js/core/chords.js`, add an entry to `CHORD_TYPES`:
 
 ```js
 { id: 'maj7b5', formula: ['1', '3', 'b5', '7'], symbol: 'maj7♭5',
@@ -255,12 +268,13 @@ Em `js/core/chords.js`, acrescente uma entrada em `CHORD_TYPES`:
   category: 'altered' }
 ```
 
-Só isso. A fórmula em graus já dá as notas com a grafia certa, e o acorde passa
-a aparecer no menu, na identificação, na partitura, no braço e no teclado.
+That is all. The formula in scale degrees already yields the notes with the
+right spelling, and the chord starts appearing in the menu, in identification,
+on the staff, on the fretboard and on the keyboard.
 
-### Adicionar uma escala
+### Adding a scale
 
-Em `js/core/scales.js`, acrescente a `SCALE_TYPES`:
+In `js/core/scales.js`, add to `SCALE_TYPES`:
 
 ```js
 { id: 'phrygianDominant', formula: ['1', 'b2', '3', '4', '5', 'b6', 'b7'],
@@ -269,198 +283,211 @@ Em `js/core/scales.js`, acrescente a `SCALE_TYPES`:
   use: { pt: 'Quinto modo da menor harmônica.', en: 'Fifth mode of harmonic minor.' } }
 ```
 
-Se a escala tiver sete notas e você quiser o campo harmônico dela, inclua o
-`id` em `HARMONIC_FIELD_SCALES` e um mapa de funções em `FUNCTION_MAPS`
+If the scale has seven notes and you want its harmonic field, add the `id` to
+`HARMONIC_FIELD_SCALES` and a function map to `FUNCTION_MAPS`
 (`js/core/harmony.js`).
 
-### Adicionar uma afinação
+### Adding a tuning
 
-Em `js/view/fretboard.js`, acrescente a `TUNINGS` a lista de cordas soltas, da
-mais grave para a mais aguda: `{ id: 'openE', strings: ['E2','B2','E3','G#3','B3','E4'], names: {...} }`.
-Qualquer número de cordas funciona.
+In `js/view/fretboard.js`, add the list of open strings to `TUNINGS`, from
+lowest to highest:
+`{ id: 'openE', strings: ['E2','B2','E3','G#3','B3','E4'], names: {...} }`.
+Any number of strings works.
 
-### Adicionar um texto de interface
+### Adding an interface string
 
-Em `js/i18n.js`, uma chave nova com `{ pt, en }`. Chaves ausentes aparecem como
-o próprio nome da chave — falha visível, de propósito.
+In `js/i18n.js`, a new key with `{ pt, en }`. Missing keys render as the key
+name itself — a visible failure, on purpose.
 
-### Adicionar uma seção nova
+### Adding a new section
 
-Crie `js/ui/minhaSecao.js` exportando uma função que devolve
-`{ element, refresh }`, registre-a em `TABS` e em `factoryFor()` dentro de
-`js/app.js`, e inclua o arquivo em `ASSETS` (`sw.js`) e em `MODULES`
+Create `js/ui/mySection.js` exporting a function that returns
+`{ element, refresh }`, register it in `TABS` and in `factoryFor()` inside
+`js/app.js`, and add the file to `ASSETS` (`sw.js`) and to `MODULES`
 (`tools/build-standalone.mjs`).
 
 ---
 
-## 9. Próximos passos sugeridos
+## 9. Suggested next steps
 
-1. **Modo justo completo** na reprodução — hoje a afinação justa aparece só na
-   seção de frequências; `justFreq` já existe em `core/notes.js`.
-2. **Exportação** da partitura em SVG/PNG e das progressões em MIDI.
-3. **Metrônomo e padrões rítmicos** de levada na reprodução de progressões.
-4. **Cifras livres no montador de progressões** (hoje só graus do campo e
-   dominantes secundários) — `core/transpose.js` já lê qualquer cifra.
-5. **Exercícios auditivos com o braço do violão**: mostrar a nota tocada no
-   braço depois de responder.
-6. **Escalas exóticas** (frígio dominante, húngara, bebop): basta acrescentar
-   a fórmula em `SCALE_TYPES`.
-7. **Partitura com compassos e ritmo**, para escrever melodias curtas.
-
----
-
-## 10. Limitações conhecidas
-
-**Som.** Os timbres são osciladores simples com envoltória ADSR. Servem para
-comparar alturas, não para representar um instrumento real: um violão tem
-dezenas de parciais, ruído de ataque, ressonância de corpo e variação por
-região do braço. A Web Audio API exige um gesto do usuário para iniciar — o
-primeiro clique em qualquer botão de tocar destrava o áudio.
-
-**Partitura.** É uma renderização didática, não um editor de música. Não há
-compassos, fórmula de compasso, ligaduras, vozes ou espaçamento tipográfico
-profissional. As claves são desenhos próprios, estilizados e reconhecíveis, mas
-não têm a forma exata de uma fonte musical profissional. Notas simultâneas a
-uma segunda de distância são deslocadas horizontalmente; casos mais complexos
-de colisão não são tratados.
-
-**Identificação de acordes.** O algoritmo compara conjuntos de classes de
-altura com o catálogo, pesando a terça e a sétima acima da quinta e penalizando
-notas estranhas. Ele **não** conhece o contexto tonal, que é justamente o que
-decide muitos casos reais: o mesmo Ré Fá Lá Dó é `Dm7` ou `F6` conforme a
-música. Conjuntos simétricos (diminutos, aumentados, tons inteiros) admitem
-várias leituras igualmente corretas, e todas são mostradas. Acordes rootless,
-poliacordes e agregados fora do catálogo aparecem como aproximações ou como
-"sem correspondência clara".
-
-**Digitações do violão.** A busca exige o acorde completo dentro de uma janela
-de quatro casas, sem cordas abafadas no meio. Isso exclui digitações reais que
-omitem a quinta ou usam polegar na sexta corda, e pode não achar nada para
-acordes de cinco ou seis notas. As posições são ordenadas por facilidade
-estimada, não por ergonomia real — não há modelo de dedos.
-
-**Consonância e dissonância.** O índice usa o modelo de aspereza de
-Plomp & Levelt na formulação de Sethares, sobre seis harmônicos de espectro
-1/n. É uma medida **acústica e relativa**, útil para comparar intervalos entre
-si. Percepção musical depende de timbre, registro, dinâmica, contexto tonal,
-época e cultura — o trítono é instável num coral de Bach e é apenas colorido
-num blues. O aplicativo diz isso explicitamente na tela.
-
-**Afinação justa.** Está implementada como razões fixas relativas a uma tônica,
-e aparece apenas na seção de frequências. Um sistema justo completo precisaria
-tratar comas, escolha de referência por acorde e afinação adaptativa.
-
-**Enarmonia.** A grafia é preservada nos cálculos, mas as escalas simétricas
-(diminutas, cromática) inevitavelmente repetem letras, porque doze ou oito
-notas não cabem em sete letras sem repetição.
-
-**Transposição.** As cifras são transpostas pelo intervalo entre as tônicas, o
-que preserva a lógica de letras; quando o resultado exigiria acidente duplo
-(Fá♭♭, Sol♯♯), trocamos pela enarmonia simples, como se faz na prática. O
-sufixo da cifra é copiado literalmente: `Cmaj7(#11)` vira `Dmaj7(#11)` sem que
-o aplicativo precise entender a alteração. Só transpomos o que estiver escrito
-em cifras — não há leitura de partitura nem de arquivos MIDI.
-
-**Treinamento auditivo.** Os exercícios usam o mesmo som sintético do resto do
-aplicativo, o que os torna mais fáceis do que reconhecer intervalos num
-instrumento real. O nível "difícil" acrescenta tonalidades com acidentes,
-inversões e intervalos descendentes, mas não simula timbres diferentes. A
-pontuação é local: apaga junto com os dados do navegador e não sincroniza
-entre dispositivos.
-
-**Caber numa tela.** As seções foram montadas em colunas para caber numa tela
-de computador (a partir de cerca de 1280×800) sem rolagem da página: cartões
-com muito conteúdo rolam por dentro. Em telas menores que 1180 px a grade cai
-para duas colunas e, abaixo de 760 px, para uma só — aí a rolagem vertical
-volta, como é natural no celular.
-
-**Armadura de clave.** Coberta para as tonalidades do círculo das quintas até
-sete acidentes; modos gregos usam a armadura da relativa maior/menor
-correspondente e não indicam as alterações modais.
-
-**Navegadores.** Requer suporte a módulos ES, `color-mix()` em CSS e Web Audio
-API — ou seja, versões recentes de Chrome, Edge, Firefox e Safari. Em janela
-anônima ou com armazenamento bloqueado, o aplicativo funciona normalmente, mas
-não guarda as preferências (e avisa sobre isso nos Ajustes).
+1. **Full just intonation** in playback — today just intonation only appears in
+   the frequencies section; `justFreq` already exists in `core/notes.js`.
+2. **Export** of the staff as SVG/PNG and of progressions as MIDI.
+3. **Metronome and strumming patterns** in progression playback.
+4. **Free chord symbols in the progression builder** (today only field degrees
+   and secondary dominants) — `core/transpose.js` already parses any symbol.
+5. **Ear-training exercises on the fretboard**: show the played note on the
+   neck after answering.
+6. **Exotic scales** (Phrygian dominant, Hungarian, bebop): just add the
+   formula to `SCALE_TYPES`.
+7. **Staff notation with bars and rhythm**, to write short melodies.
 
 ---
 
-## 11. Privacidade
+## 10. Known limitations
 
-Não há conta, cadastro, telemetria, cookie ou chamada de rede para terceiros.
-O único armazenamento é o `localStorage` do próprio navegador, com as chaves
-prefixadas por `harmonia:`, e guarda apenas idioma, tema, notação, forma de
-onda, volume, andamento, referência do Lá4 e afinação escolhida. O botão
-**Apagar dados salvos**, nos Ajustes, remove tudo. Depois do primeiro
-carregamento, o service worker permite usar o aplicativo offline.
+**Sound.** The timbres are simple oscillators with an ADSR envelope. They are
+good for comparing pitches, not for representing a real instrument: a guitar
+has dozens of partials, attack noise, body resonance and variation along the
+neck. The Web Audio API requires a user gesture to start — the first click on
+any play button unlocks the audio.
+
+**Staff notation.** This is a didactic rendering, not a score editor. There are
+no bars, time signatures, ties, voices or professional typographic spacing. The
+clefs are custom drawings — stylised and recognisable, but not the exact shape
+of a professional music font. Simultaneous notes a second apart are offset
+horizontally; more complex collision cases are not handled.
+
+**Chord identification.** The algorithm compares pitch-class sets against the
+catalogue, weighting the third and the seventh above the fifth and penalising
+foreign notes. It does **not** know the tonal context, which is exactly what
+decides many real cases: the same D F A C is `Dm7` or `F6` depending on the
+music. Symmetric sets (diminished, augmented, whole tone) admit several equally
+correct readings, and all of them are shown. Rootless voicings, polychords and
+aggregates outside the catalogue appear as approximations or as "no clear
+match".
+
+**Guitar fingerings.** The search requires the complete chord within a
+four-fret window, with no muted strings in the middle. That rules out real
+voicings which omit the fifth or use the thumb on the sixth string, and it may
+find nothing for five- or six-note chords. Positions are ordered by estimated
+ease, not by real ergonomics — there is no model of the hand.
+
+**Consonance and dissonance.** The index uses the Plomp & Levelt roughness
+model in Sethares' formulation, over six harmonics of a 1/n spectrum. It is an
+**acoustic and relative** measure, useful for comparing intervals against each
+other. Musical perception depends on timbre, register, dynamics, tonal context,
+period and culture — the tritone is unstable in a Bach chorale and merely
+colourful in a blues. The app says so explicitly on screen.
+
+**Just intonation.** Implemented as fixed ratios relative to a tonic, and it
+appears only in the frequencies section. A complete just system would have to
+deal with commas, per-chord reference choice and adaptive tuning.
+
+**Enharmonics.** Spelling is preserved throughout the calculations, but
+symmetric scales (diminished, chromatic) inevitably repeat letters, because
+twelve or eight notes do not fit into seven letters without repetition.
+
+**Transposition.** Chord symbols are transposed by the interval between the
+tonics, which preserves the letter logic; when the result would require a
+double accidental (F♭♭, G♯♯), we substitute the simple enharmonic, as is done
+in practice. The suffix is copied literally: `Cmaj7(#11)` becomes
+`Dmaj7(#11)` without the app needing to understand the alteration. Only written
+chord symbols are transposed — there is no score reading and no MIDI import.
+
+**Ear training.** The exercises use the same synthetic sound as the rest of the
+app, which makes them easier than recognising intervals on a real instrument.
+The "hard" level adds keys with accidentals, inversions and descending
+intervals, but does not simulate different timbres. Scores are local: they are
+erased along with the browser data and do not sync across devices.
+
+**Fitting on one screen.** On a desktop screen (from roughly 1280×800 up) the
+sections are laid out in columns so the whole tool is visible without scrolling
+the page; cards with a lot of content scroll internally. Below 1180 px the grid
+drops to two columns. Below 760 px the phone layout takes over: a single
+column, the tabs move to a fixed bar at the bottom of the screen, the internal
+card scrolling is removed and the page scrolls vertically, as is natural on a
+phone.
+
+**Key signatures.** Covered for the circle-of-fifths keys up to seven
+accidentals; church modes use the key signature of the corresponding relative
+major/minor and do not show the modal alterations.
+
+**Browsers.** Requires support for ES modules, CSS `color-mix()` and the Web
+Audio API — that is, recent versions of Chrome, Edge, Firefox and Safari. In a
+private window or with storage blocked the app works normally, but it will not
+remember preferences (and it says so in Settings).
 
 ---
 
-## 12. Decisões técnicas
+## 11. Privacy
 
-**Fórmulas em graus, não em semitons.** Um acorde é `['1','3','5','b7']` e uma
-escala é `['1','2','b3','4','5','b6','7']`. Guardar semitons seria mais simples
-e produziria enarmonias erradas: Fá maior sairia com Lá♯ em vez de Si♭, e o
-Dó diminuto com sétima sairia com Lá em vez de Si♭♭. O grau carrega, junto com
-a distância, a **letra** que a nota deve ter.
-
-**Sem framework.** O aplicativo tem poucas telas e muito desenho. Um framework
-traria peso, uma etapa de build e uma dependência a manter, sem resolver o
-problema difícil, que é musical e gráfico. A função `h()` em `js/ui/ui.js` tem
-trinta linhas e cobre tudo o que é preciso.
-
-**Redesenho completo por seção.** Cada seção se redesenha inteira a cada
-mudança. Com estas quantidades de elementos é instantâneo, e evita a classe de
-bugs mais chata de interface manual: estado espalhado entre nós do DOM.
-
-**Módulos ES em vez de um bundle.** O código fica legível no navegador, sem
-build. Como `file://` não aceita módulos, o empacotador próprio
-(`tools/build-standalone.mjs`, ~120 linhas) gera a versão de arquivo único
-quando ela é necessária.
-
-**Pesos na identificação de acordes.** Terça e sétima definem a qualidade;
-a quinta justa é a nota mais dispensável (pesa 0,45); extensões pesam 0,65. Sem
-essa hierarquia, um Dó maior sem quinta seria rejeitado e um Dó com nona
-ganharia de um Dó7 legítimo.
-
-**Claves desenhadas à mão.** Os glifos musicais Unicode (U+1D11E) dependem de
-fontes que muitos sistemas não têm, e embutir uma fonte musical acrescentaria
-centenas de kilobytes e uma licença a respeitar. Curvas de Bézier resolvem com
-alguns bytes e aparência idêntica em qualquer lugar.
-
-**Teste em Node, não em navegador.** Como `core/` não toca no DOM, os testes
-rodam com `node tools/run-tests.mjs` em menos de um segundo, sem instalar nada.
-
-**Layout em grade de doze colunas.** Cada seção declara quantas colunas cada
-cartão ocupa (`span-3`, `span-5`, `span-12`…) e a folha de estilos reduz para
-seis e depois para uma coluna conforme a tela encolhe. Cartões com muito
-conteúdo recebem um limite de altura e rolam por dentro, o que mantém a página
-inteira visível sem sacrificar informação.
-
-**Exercícios auditivos separados do áudio.** `core/training.js` só decide *o
-que* tocar, quais alternativas oferecer e por quê; quem toca é a tela. Com um
-sorteador semeado (`makeRng`), a mesma semente gera sempre a mesma questão —
-é assim que os testes verificam todos os exercícios em todos os níveis.
+There is no account, sign-up, telemetry, cookie or network call to any third
+party. The only storage is the browser's own `localStorage`, with keys prefixed
+`harmonia:`, and it holds only the language, theme, notation, waveform, volume,
+tempo, A4 reference and chosen tuning. The **Clear saved data** button in
+Settings removes everything. After the first load, the service worker allows
+the app to be used offline.
 
 ---
 
-## 13. Atalhos de teclado
+## 12. Technical decisions
 
-| Tecla | Ação |
+**Formulas in scale degrees, not semitones.** A chord is `['1','3','5','b7']`
+and a scale is `['1','2','b3','4','5','b6','7']`. Storing semitones would be
+simpler and would produce wrong enharmonics: F major would come out with A♯
+instead of B♭, and C diminished seventh with A instead of B♭♭. The degree
+carries, along with the distance, the **letter** the note must have.
+
+**No framework.** The app has few screens and a lot of drawing. A framework
+would bring weight, a build step and a dependency to maintain, without solving
+the hard problem, which is musical and graphical. The `h()` function in
+`js/ui/ui.js` is thirty lines and covers everything needed.
+
+**Full redraw per section.** Each section redraws itself entirely on every
+change. At these element counts it is instantaneous, and it avoids the most
+tedious class of hand-written-UI bug: state scattered across DOM nodes.
+
+**ES modules instead of a bundle.** The code stays readable in the browser,
+with no build. Since `file://` will not accept modules, the project's own
+bundler (`tools/build-standalone.mjs`, ~120 lines) produces the single-file
+version when it is needed.
+
+**Weights in chord identification.** Third and seventh define the quality; the
+perfect fifth is the most expendable note (weight 0.45); extensions weigh 0.65.
+Without that hierarchy, a C major without a fifth would be rejected and a C
+with a ninth would beat a legitimate C7.
+
+**Hand-drawn clefs.** The Unicode musical glyphs (U+1D11E) depend on fonts many
+systems do not have, and embedding a music font would add hundreds of kilobytes
+and a licence to respect. Bézier curves solve it in a few bytes and look
+identical everywhere.
+
+**Testing in Node, not in a browser.** Since `core/` never touches the DOM, the
+tests run with `node tools/run-tests.mjs` in under a second, with nothing to
+install.
+
+**A twelve-column grid layout.** Each section declares how many columns each
+card occupies (`span-3`, `span-5`, `span-12`…) and the stylesheet reduces that
+to six and then to a single column as the screen shrinks. Cards with a lot of
+content get a height limit and scroll internally on desktop, which keeps the
+whole page visible without sacrificing information.
+
+**A separate mobile layout, not a shrunken desktop one.** Below 760 px the tabs
+leave the header and become a bar fixed to the bottom of the screen, within
+thumb reach, which auto-scrolls to keep the active tab centred. The internal
+card scrolling is switched off — nested scroll areas are miserable on a phone —
+form fields sit two per row with 16 px text so iOS does not zoom on focus, every
+control gets a 40–44 px touch target, and the fretboard and keyboard become
+full-bleed swipeable strips. All of it lives inside `max-width: 760px` media
+queries, so the desktop layout is untouched.
+
+**Ear-training exercises separated from the audio.** `core/training.js` only
+decides *what* to play, which options to offer and why; the screen does the
+playing. With a seeded random generator (`makeRng`), the same seed always
+produces the same question — that is how the tests verify every exercise at
+every level.
+
+---
+
+## 13. Keyboard shortcuts
+
+| Key | Action |
 |---|---|
-| `1` … `9` | Alterna entre as nove ferramentas |
-| `,` | Abre os ajustes |
-| `?` | Abre o diálogo "Como usar" |
-| `Esc` | Interrompe o som imediatamente |
-| `Tab` / `Shift+Tab` | Percorre os controles |
-| `Enter` / `Espaço` | Aciona notas no braço e no teclado |
+| `1` … `9` | Switch between the nine tools |
+| `,` | Open settings |
+| `?` | Open the "How to use" dialog |
+| `Esc` | Stop the sound immediately |
+| `Tab` / `Shift+Tab` | Move through the controls |
+| `Enter` / `Space` | Trigger notes on the fretboard and keyboard |
 
-Todos os controles gráficos têm rótulo acessível; o braço e o teclado expõem
-cada nota como botão com `aria-label` descrevendo nota, corda e casa.
+Every graphical control has an accessible label; the fretboard and the keyboard
+expose each note as a button with an `aria-label` describing note, string and
+fret.
 
 ---
 
-## 14. Licença
+## 14. Licence
 
-MIT — veja [LICENSE](LICENSE). Use, modifique e publique à vontade, inclusive
-para fins comerciais, mantendo o aviso de copyright.
+MIT — see [LICENSE](LICENSE). Use, modify and publish freely, including for
+commercial purposes, keeping the copyright notice.

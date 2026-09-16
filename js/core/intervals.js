@@ -81,7 +81,7 @@ export function intervalBetween(a, b) {
 }
 
 /** Nome do intervalo. */
-export function intervalName(iv, lang = 'pt') {
+export function intervalName(iv, lang = 'en') {
   const n = iv.number;
   const q = QUALITY_NAMES[iv.quality];
   if (!q) return '?';
@@ -96,7 +96,7 @@ export function intervalName(iv, lang = 'pt') {
 }
 
 /** Abreviação usual: J5, M3, m7, A4, d5... (P5, M3, m7 em inglês). */
-export function intervalAbbr(iv, lang = 'pt') {
+export function intervalAbbr(iv, lang = 'en') {
   const q = QUALITY_NAMES[iv.quality];
   const letter = lang === 'pt' ? q.abbr : q.abbrEn;
   return `${letter}${iv.number}`;
@@ -201,7 +201,7 @@ export function intervalKey(iv) {
 }
 
 /** Texto pronto para exibir: "Dó → Mi: terça maior (M3, 4 semitons)". */
-export function describeInterval(a, b, lang = 'pt') {
+export function describeInterval(a, b, lang = 'en') {
   const iv = intervalBetween(a, b);
   const abbr = intervalAbbr(iv, lang);
   const semis = Math.abs(iv.semitones);

@@ -65,7 +65,7 @@ export function renderFretboard(opts = {}) {
     fromFret = 0,
     toFret = 12,
     marks = new Map(),
-    lang = 'pt',
+    lang = 'en',
     onSelect = null,
     labelMode = 'note'
   } = opts;
@@ -281,7 +281,7 @@ function evaluateVoicing(frets, opens, wanted, rootPc, span) {
 
 /** Diagrama de acorde (caixinha vertical), como nos livros de violão. */
 export function renderChordDiagram(voicing, tuning, opts = {}) {
-  const { lang = 'pt', labelFn = null } = opts;
+  const { lang = 'en', labelFn = null } = opts;
   const strings = tuning.strings.length;
   const fretted = voicing.frets.filter((f) => f !== null && f > 0);
   const minFret = fretted.length ? Math.min(...fretted) : 1;

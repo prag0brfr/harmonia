@@ -1,13 +1,13 @@
 {
-  "name": "Harmonia — teoria musical visual",
+  "name": "Harmonia — visual music theory",
   "short_name": "Harmonia",
-  "description": "Acordes, campo harmônico, partitura, braço da guitarra e interferência entre frequências.",
+  "description": "Chords, harmonic field, staff notation, guitar fretboard and frequency interference.",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
   "background_color": "#0f1216",
   "theme_color": "#0f1216",
-  "lang": "pt-BR",
+  "lang": "en",
   "icons": [
     {
       "src": "icon.svg",

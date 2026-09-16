@@ -153,7 +153,7 @@ export function parseNote(text, defaultOctave = 4) {
  * @param {{lang?: 'pt'|'en', octave?: boolean, ascii?: boolean}} opts
  */
 export function noteName(n, opts = {}) {
-  const { lang = 'pt', octave = false, ascii = false } = opts;
+  const { lang = 'en', octave = false, ascii = false } = opts;
   const base = lang === 'pt' ? LETTER_PT[n.letter] : n.letter;
   const acc = ACCIDENTALS[String(n.alter)];
   const accText = acc ? (ascii ? acc.ascii : acc.symbol) : '';
@@ -161,7 +161,7 @@ export function noteName(n, opts = {}) {
 }
 
 /** Nome da classe de altura, sem oitava. */
-export function pcName(n, lang = 'pt') {
+export function pcName(n, lang = 'en') {
   return noteName(n, { lang, octave: false });
 }
 

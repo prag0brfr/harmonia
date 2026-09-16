@@ -69,7 +69,7 @@ export function createChordLibrary() {
     const typeOptions = CHORD_TYPES.map((ty) => ({
       value: ty.id,
       group: pick(CHORD_CATEGORIES[ty.category]),
-      label: `${ty.symbol || (lang === 'pt' ? 'maior' : 'major')} — ${pick(ty.names)}`
+      label: ty.symbol ? `${ty.symbol} — ${pick(ty.names)}` : pick(ty.names)
     }));
 
     const rootOptions = ROOT_OPTIONS.map((r) => ({

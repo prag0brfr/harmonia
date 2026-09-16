@@ -111,7 +111,7 @@ export function parseChordToken(text) {
 }
 
 /** Escreve a cifra de volta como texto. */
-export function chordTokenText(token, { lang = 'pt' } = {}) {
+export function chordTokenText(token, { lang = 'en' } = {}) {
   const base = noteName(token.root, { lang }) + token.suffix;
   return token.bass ? `${base}/${noteName(token.bass, { lang })}` : base;
 }
@@ -130,7 +130,7 @@ export function transposeChordToken(token, iv, dir = 1) {
  * "C | Am | F G" continua com as barras no lugar.
  * @returns {{tokens: Array<{text:string, chord:object|null}>}}
  */
-export function transposeLine(text, iv, dir = 1, { lang = 'pt' } = {}) {
+export function transposeLine(text, iv, dir = 1, { lang = 'en' } = {}) {
   const parts = String(text).split(/(\s+|\|)/);
   const out = parts.map((part) => {
     if (/^\s*$/.test(part) || part === '|') return { text: part, chord: null };
@@ -174,7 +174,7 @@ export function tokenMidis(token, octave = 3) {
 }
 
 /** Descrição curta do salto aplicado, para mostrar na interface. */
-export function describeShift(iv, dir, lang = 'pt') {
+export function describeShift(iv, dir, lang = 'en') {
   const dirWord = dir > 0
     ? (lang === 'pt' ? 'acima' : 'up')
     : (lang === 'pt' ? 'abaixo' : 'down');

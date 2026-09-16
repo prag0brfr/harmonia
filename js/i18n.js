@@ -366,7 +366,7 @@ const DICT = {
   }
 };
 
-let current = 'pt';
+let current = 'en';
 const listeners = new Set();
 
 export function setLang(lang) {
@@ -392,7 +392,7 @@ export function t(key) {
 /** Escolhe o campo certo de um objeto { pt, en }. */
 export function pick(obj) {
   if (!obj) return '';
-  return obj[current] || obj.pt || obj.en || '';
+  return obj[current] || obj.en || obj.pt || '';
 }
 
 export { DICT };

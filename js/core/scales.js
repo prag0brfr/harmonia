@@ -153,7 +153,7 @@ export function scaleSteps(typeId) {
 }
 
 /** Passos escritos como T/S (ou W/H em inglês). */
-export function stepPattern(typeId, lang = 'pt') {
+export function stepPattern(typeId, lang = 'en') {
   const tone = lang === 'pt' ? 'T' : 'W';
   const semi = lang === 'pt' ? 'S' : 'H';
   return scaleSteps(typeId).map((s) => {
@@ -199,6 +199,6 @@ export function scaleNotesInOctave(scale, octave) {
 }
 
 /** Lista legível das notas. */
-export function scaleNoteNames(scale, lang = 'pt') {
+export function scaleNoteNames(scale, lang = 'en') {
   return scale.notes.map((n) => noteName(n, { lang }));
 }

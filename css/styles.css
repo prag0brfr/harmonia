@@ -819,7 +819,7 @@ kbd {
   .kv:last-child { border-bottom: 0; }
   .panel code { overflow-wrap: anywhere; }
   /* Rótulo em cima, valor embaixo: evita sobras de uma sílaba na linha seguinte. */
-  .scale-info .label, .chord-formula .label { display: block; }
+  .scale-info .label { display: block; }
   .kv-label { min-width: 0; }
   .kv-value { font-size: .95rem; }
 

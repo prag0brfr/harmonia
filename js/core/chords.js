@@ -127,7 +127,7 @@ export function invertNotes(notes, n) {
 }
 
 /** Cifra completa: "C", "Am7", "G7♭9", com baixo quando invertido. */
-export function chordSymbol(chord, { lang = 'pt', ascii = false } = {}) {
+export function chordSymbol(chord, { lang = 'en', ascii = false } = {}) {
   const rootName = noteName(chord.root, { lang: lang === 'pt' ? 'pt' : 'en', ascii });
   const base = rootName + chord.type.symbol;
   const bass = sortByPitch(chord.notes)[0];
@@ -138,7 +138,7 @@ export function chordSymbol(chord, { lang = 'pt', ascii = false } = {}) {
 }
 
 /** Nome por extenso: "Dó maior com sétima menor". */
-export function chordFullName(chord, lang = 'pt') {
+export function chordFullName(chord, lang = 'en') {
   const rootName = noteName(chord.root, { lang });
   return `${rootName} ${chord.type.names[lang] || chord.type.names.pt}`;
 }
@@ -294,7 +294,7 @@ export function identifyChords(notes, opts = {}) {
  * Explica, em texto, por que um resultado foi identificado.
  * @returns {{lines: string[]}}
  */
-export function explainResult(result, lang = 'pt') {
+export function explainResult(result, lang = 'en') {
   const lines = [];
   const rn = noteName(result.rootNote, { lang });
   const pt = lang === 'pt';
@@ -322,7 +322,7 @@ export function explainResult(result, lang = 'pt') {
 }
 
 /** Intervalos da fundamental até cada nota, para exibição. */
-export function chordIntervalTable(chord, lang = 'pt') {
+export function chordIntervalTable(chord, lang = 'en') {
   return sortByPitch(chord.notes).map((n) => {
     const iv = intervalBetween(chord.root, n);
     return {

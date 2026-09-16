@@ -113,13 +113,13 @@ for (const path of MODULES) {
 }
 
 const html = `<!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Aplicativo educacional de teoria musical: acordes, campo harmônico, partitura, braço da guitarra e interferência entre frequências.">
+  <meta name="description" content="Music theory learning app: chords, harmonic field, staff notation, guitar fretboard and frequency interference.">
   <meta name="color-scheme" content="light dark">
-  <title>Harmonia — teoria musical visual</title>
+  <title>Harmonia — visual music theory</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♫</text></svg>">
   <style>
 ${css}
@@ -127,7 +127,7 @@ ${css}
 </head>
 <body>
   <div id="app">
-    <noscript><p style="padding:2rem;font-family:system-ui">Este aplicativo precisa de JavaScript. / This app needs JavaScript.</p></noscript>
+    <noscript><p style="padding:2rem;font-family:system-ui">This app needs JavaScript. / Este aplicativo precisa de JavaScript.</p></noscript>
   </div>
   <script>
 (function () {
@@ -146,7 +146,7 @@ const artifact = `<title>Harmonia</title>
 ${css}
 </style>
 <div id="app">
-  <noscript><p style="padding:2rem;font-family:system-ui">Este aplicativo precisa de JavaScript. / This app needs JavaScript.</p></noscript>
+  <noscript><p style="padding:2rem;font-family:system-ui">This app needs JavaScript. / Este aplicativo precisa de JavaScript.</p></noscript>
 </div>
 <script>
 (function () {

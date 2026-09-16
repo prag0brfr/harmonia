@@ -10,9 +10,9 @@
 const PREFIX = 'harmonia:';
 
 export const DEFAULTS = {
-  lang: 'pt',
+  lang: 'en',
   theme: 'auto',
-  notation: 'pt',       // 'pt' = Dó Ré Mi, 'en' = C D E
+  notation: 'en',       // 'en' = C D E, 'pt' = Dó Ré Mi
   waveform: 'triangle',
   volume: 0.7,
   tempo: 90,

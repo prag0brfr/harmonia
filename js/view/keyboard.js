@@ -36,7 +36,7 @@ function isWhite(midi) {
 export function renderKeyboard(opts = {}) {
   const {
     fromMidi = 48, toMidi: to = 84, marks = new Map(), pcMarks = new Map(),
-    lang = 'pt', onSelect = null, showLabels = true, height = 112
+    lang = 'en', onSelect = null, showLabels = true, height = 112
   } = opts;
 
   let start = fromMidi;
